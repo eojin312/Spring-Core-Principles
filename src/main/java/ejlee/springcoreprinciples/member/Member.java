@@ -12,4 +12,16 @@ public class Member {
         this.grade = grade;
     }
 
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Grade getGrade() {
+        return grade;
+    }
 }
