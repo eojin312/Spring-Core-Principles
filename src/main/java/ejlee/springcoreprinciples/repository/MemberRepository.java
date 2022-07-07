@@ -1,4 +1,6 @@
-package ejlee.springcoreprinciples.member;
+package ejlee.springcoreprinciples.repository;
+
+import ejlee.springcoreprinciples.member.Member;
 
 public interface MemberRepository {
 
