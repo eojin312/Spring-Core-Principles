@@ -18,11 +18,6 @@ class MemberServiceTest {
         memberService.join(member);
 
         Member findMeber = memberService.findMember(1L);
-
         Assertions.assertEquals(member.getGrade(), findMeber.getGrade());
-    }
-
-    @Test
-    void findMember() {
     }
 }
