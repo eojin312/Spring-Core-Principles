@@ -20,9 +20,9 @@ class OrderServiceImplTest {
         Member member = new Member(1L, "memberA", Grade.VIP);
         memberService.join(member);
 
-        Order order = orderService.createOrder(memberId, "itemA", 1000);
+        Order order = orderService.createOrder(memberId, "itemA", 100000);
 
         System.out.println(order);
-
+        System.out.println(order.calculatePrice());
     }
 }
