@@ -6,6 +6,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RateDiscountPolicyTest {
@@ -16,10 +17,14 @@ class RateDiscountPolicyTest {
     @DisplayName("VIP는 10% 할인이 되어야한다")
     void disCount() {
 
+        // given
         Member member = new Member(1L, "memberVip", Grade.VIP);
 
+        // when
         int discount = discountPolicy.disCount(member, 10000);
-        Assertions.assertThat(discount).isEqualTo(1000);
+
+        // then
+        assertThat(discount).isEqualTo(1000);
     }
 
     @Test
@@ -28,7 +33,7 @@ class RateDiscountPolicyTest {
         Member member = new Member(1L, "memberBasic", Grade.BASIC);
 
         int discount = discountPolicy.disCount(member, 10000);
-        Assertions.assertThat(discount).isEqualTo(0);
-        Assertions.assertThat(discount).isNotEqualTo(1000);
+        assertThat(discount).isEqualTo(0);
+        assertThat(discount).isNotEqualTo(1000);
     }
 }

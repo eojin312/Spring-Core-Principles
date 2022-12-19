@@ -2,6 +2,7 @@ package ejlee.springcoreprinciples.service;
 
 import ejlee.springcoreprinciples.member.Grade;
 import ejlee.springcoreprinciples.member.Member;
+import ejlee.springcoreprinciples.repository.impl.MemoryMemberRepository;
 import ejlee.springcoreprinciples.service.impl.MemberServiceImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -12,7 +13,8 @@ class MemberServiceTest {
 
     @Test
     void join() {
-        MemberService memberService = new MemberServiceImpl();
+        MemberService memberService = new MemberServiceImpl(new MemoryMemberRepository());
+
         Member member = new Member(1L, "memberA", Grade.VIP);
 
         memberService.join(member);
